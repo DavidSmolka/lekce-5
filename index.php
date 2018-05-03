@@ -1,5 +1,15 @@
 <?php
 require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
+require 'Programators/Objekty/DvourozmerneObjekty/Kruh.php';
+require 'Programators/Objekty/DvourozmerneObjekty/Ctverec.php';
+require 'Programators/Objekty/DvourozmerneObjekty/DvourozmernyObrazec.php';
+
+function vypisObsah(DvourozmernyObrazec $obrazec) 
+{
+  
+  echo $obrazec->ziskejObsah();
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,8 +64,15 @@ require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
       </div>
 
       <?php
-        $obdelnik = new Obdelnik(2, 3);
-
+        $obdelnik = new Obdelnik(7, 9);
+        $obdelnik2= new Obdelnik(3,5);
+        $kruh = new Kruh(8);
+        $ctverec = new Ctverec(2);
+        var_dump($obdelnik2);
+        var_dump($obdelnik);
+        var_dump($kruh);
+        var_dump($ctverec);
+        
       ?>
 
       <div class="container">
@@ -71,7 +88,21 @@ require 'Programators/Objekty/DvourozmerneObjekty/Obdelnik.php';
           </tr>
           <tr>
             <th>Obsah</th>
-            <td><?=$obdelnik->ziskejObsah()?></td>
+            <td><? vypisObsah();?></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="container">
+        <h1>Kruh</h1>
+        <table class="table">
+          <tr>
+            <th>Polomer</th>
+            <td><?=$kruh->ziskejPolomer()?></td>
+          </tr>
+          <tr>
+            <th>Obsah</th>
+            <td><? vypisObsah();?></td>
           </tr>
         </table>
       </div>
